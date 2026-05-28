@@ -22,6 +22,7 @@ body{
     overflow-x:hidden;
     font-family:'Special Elite', cursive;
     position:relative;
+    padding-bottom:100px;
 }
 
 /* STARS */
@@ -32,114 +33,146 @@ body{
     height:100%;
     top:0;
     left:0;
+
     background-image:
     radial-gradient(white 1px, transparent 1px);
+
     background-size:50px 50px;
-    opacity:0.2;
+
+    opacity:0.18;
+
     z-index:-2;
 }
 
 /* MOON */
 
 .moon{
-    width:180px;
-    height:180px;
+    width:190px;
+    height:190px;
+
     background:#f5f3ce;
+
     border-radius:50%;
-    margin:60px auto 20px;
+
+    margin:70px auto 25px;
+
     box-shadow:
-    0 0 50px #fff8b0,
-    0 0 120px #fff8b0;
+    0 0 60px #fff8b0,
+    0 0 140px rgba(255,248,176,0.5);
 }
 
 /* TITLE */
 
 .title{
     text-align:center;
-    font-size:60px;
-    margin-bottom:60px;
+    font-size:62px;
+    margin-bottom:70px;
     font-family:'Caveat', cursive;
-    color:#fff3c2;
+    color:#fff1b6;
 }
 
-/* NOTES */
+/* NOTES CONTAINER */
 
 .container{
     width:100%;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:60px;
-    padding-bottom:120px;
+    gap:55px;
 }
 
 /* PAPER NOTE */
 
 .note{
-    width:85%;
-    max-width:500px;
-    background:#d8c3a5;
-    color:#2d1f14;
-    padding:35px;
-    line-height:2;
-    border-radius:3px;
-    position:relative;
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.5);
+    width:88%;
+    max-width:550px;
 
-    transform:rotate(-1deg);
-    animation:float 4s ease-in-out infinite;
+    background:#d7c2a3;
+
+    color:#2d1f14;
+
+    padding:35px;
+
+    line-height:2;
+
+    border-radius:4px;
+
+    position:relative;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.45);
+
+    animation:float 5s ease-in-out infinite;
 }
 
-/* alternate rotation */
+/* DIFFERENT ROTATION */
+
+.note:nth-child(odd){
+    transform:rotate(-1deg);
+}
 
 .note:nth-child(even){
     transform:rotate(1deg);
 }
 
-/* tape effect */
+/* TAPE */
 
 .note::before{
     content:'';
+
     position:absolute;
+
     width:90px;
     height:25px;
-    background:rgba(255,255,255,0.25);
+
+    background:rgba(255,255,255,0.28);
+
     top:-12px;
     left:50%;
+
     transform:translateX(-50%) rotate(-3deg);
+
     backdrop-filter:blur(2px);
 }
 
-/* little pin */
+/* PIN */
 
 .note::after{
     content:'';
-    width:15px;
-    height:15px;
-    background:#b88c5a;
+
+    width:14px;
+    height:14px;
+
+    background:#a87849;
+
     border-radius:50%;
+
     position:absolute;
-    top:10px;
+
+    top:8px;
     left:50%;
+
     transform:translateX(-50%);
-    box-shadow:0 2px 6px rgba(0,0,0,0.5);
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* FLOAT */
+/* FLOATING EFFECT */
 
 @keyframes float{
-    0%{
-        transform:translateY(0px);
-    }
 
-    50%{
-        transform:translateY(-10px);
-    }
+0%{
+transform:translateY(0px);
+}
 
-    100%{
-        transform:translateY(0px);
-    }
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
 }
 
 /* HEART */
@@ -148,16 +181,187 @@ body{
     text-align:right;
     margin-top:15px;
     font-size:24px;
-    color:#8b3a3a;
+    color:#8f4a4a;
 }
 
-/* END */
+/* SHAYARI NOTE */
+
+.shayari-note{
+
+    width:90%;
+    max-width:620px;
+
+    background:linear-gradient(
+    135deg,
+    #1b1310,
+    #2d1c16
+    );
+
+    color:#ffe6c7;
+
+    padding:50px 35px;
+
+    border-radius:20px;
+
+    position:relative;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 25px rgba(255,190,120,0.15),
+    0 15px 45px rgba(0,0,0,0.65);
+
+    animation:shayariGlow 4s ease-in-out infinite;
+}
+
+/* SHAYARI GLOW */
+
+@keyframes shayariGlow{
+
+0%{
+box-shadow:
+0 0 15px rgba(255,190,120,0.1),
+0 15px 45px rgba(0,0,0,0.65);
+}
+
+50%{
+box-shadow:
+0 0 35px rgba(255,190,120,0.35),
+0 15px 45px rgba(0,0,0,0.65);
+}
+
+100%{
+box-shadow:
+0 0 15px rgba(255,190,120,0.1),
+0 15px 45px rgba(0,0,0,0.65);
+}
+
+}
+
+/* SHAYARI TEXT */
+
+.shayari{
+
+    font-family:'Caveat', cursive;
+
+    font-size:34px;
+
+    line-height:2;
+
+    color:#ffe6c7;
+}
+
+/* SHAYARI HEART */
+
+.shayari-heart{
+
+    margin-top:25px;
+
+    font-size:30px;
+
+    color:#d98d8d;
+}
+
+/* PROMISE NOTE */
+
+.promise-note{
+
+    width:90%;
+    max-width:620px;
+
+    background:linear-gradient(
+    135deg,
+    #2a1d12,
+    #3a2818
+    );
+
+    color:#ffe8a3;
+
+    padding:50px 35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    position:relative;
+
+    border:2px solid rgba(255,223,120,0.35);
+
+    box-shadow:
+    0 0 30px rgba(255,223,120,0.35),
+    0 15px 45px rgba(0,0,0,0.65);
+
+    animation:glow 3s ease-in-out infinite;
+}
+
+/* GLOW */
+
+@keyframes glow{
+
+0%{
+box-shadow:
+0 0 20px rgba(255,223,120,0.2),
+0 15px 45px rgba(0,0,0,0.65);
+}
+
+50%{
+box-shadow:
+0 0 45px rgba(255,223,120,0.55),
+0 15px 45px rgba(0,0,0,0.65);
+}
+
+100%{
+box-shadow:
+0 0 20px rgba(255,223,120,0.2),
+0 15px 45px rgba(0,0,0,0.65);
+}
+
+}
+
+/* PROMISE TITLE */
+
+.promise-note h2{
+
+    font-size:55px;
+
+    margin-bottom:30px;
+
+    font-family:'Caveat', cursive;
+
+    color:#fff0bd;
+}
+
+/* PROMISE TEXT */
+
+.promise-note p{
+
+    font-size:20px;
+
+    line-height:2;
+
+    margin-bottom:22px;
+}
+
+/* FINAL LINE */
+
+.final-line{
+
+    font-size:32px !important;
+
+    font-family:'Caveat', cursive;
+
+    color:#fff0bd;
+}
+
+/* END SIGN */
 
 .end{
     text-align:center;
-    font-size:35px;
-    color:#fff3c2;
-    padding-bottom:100px;
+    margin-top:90px;
+    font-size:42px;
+    color:#fff0bd;
     font-family:'Caveat', cursive;
 }
 
@@ -166,14 +370,35 @@ body{
 @media(max-width:600px){
 
 .title{
-    font-size:48px;
+    font-size:50px;
 }
 
 .note{
-    width:90%;
+    width:92%;
     padding:25px;
     font-size:15px;
     line-height:1.8;
+}
+
+.shayari{
+    font-size:28px;
+}
+
+.promise-note{
+    width:92%;
+    padding:35px 25px;
+}
+
+.promise-note h2{
+    font-size:42px;
+}
+
+.promise-note p{
+    font-size:17px;
+}
+
+.final-line{
+    font-size:28px !important;
 }
 
 }
@@ -200,6 +425,7 @@ But in first year, we made eye contact once.
 
 Maybe for you it was just a normal moment,
 but for me, it became one of the most beautiful memories of my life.
+
 <div class="heart">♡</div>
 </div>
 
@@ -210,12 +436,14 @@ Because honestly, you looked so stunning… so beautiful.
 
 But as the semesters passed,
 I realized it was more than that.
+
 <div class="heart">♡</div>
 </div>
 
 <div class="note">
 Somewhere in between those days,
 you slowly made a place in my heart.
+
 <div class="heart">♡</div>
 </div>
 
@@ -226,24 +454,40 @@ but whenever you came in front of me,
 my mind just stopped working.
 
 I forgot every sentence I ever prepared.
+
 <div class="heart">♡</div>
 </div>
 
-<div class="note">
+<!-- SHAYARI NOTE -->
+
+<div class="shayari-note">
+
+<div class="shayari">
+
 Vo samne thi par hum palakhe uthaa na sake,
+<br><br>
 
 Pyar to bahot krte hai par kabhi bata na sake.
+<br><br>
 
 Pass nhi ja skte the kyuki unki tasveer thi ankho me,
+<br><br>
 
 Bas yahi sochkar hum unse najre mila na sake.
-<div class="heart">♡</div>
+
+</div>
+
+<div class="shayari-heart">♡</div>
+
 </div>
 
 <div class="note">
 Whenever life felt heavy or messed up,
 
 one message from you was enough to make me feel okay again.
+
+Those long chats with you made me feel genuinely happy.
+
 <div class="heart">♡</div>
 </div>
 
@@ -253,6 +497,7 @@ I know making a website to express feelings sounds a little weird.
 But I’m a shy person.
 
 And this was probably the only way I could say everything without forgetting my words.
+
 <div class="heart">♡</div>
 </div>
 
@@ -260,27 +505,43 @@ And this was probably the only way I could say everything without forgetting my 
 I’m not asking for anything from you.
 
 I just wanted you to know what you meant to me.
+
 <div class="heart">♡</div>
 </div>
 
-<div class="note">
+<!-- PROMISE NOTE -->
+
+<div class="promise-note">
+
+<h2>One Promise 🌙</h2>
+
+<p>
 And before this page ends,
 I just want one promise from you:
+</p>
 
-Never waste your feelings on someone who doesn’t value your heart.
+<p>
+Never waste your feelings on someone
+who doesn’t value your heart.
+</p>
 
-You deserve someone who truly cares for you.
-<div class="heart">♡</div>
-</div>
+<p>
+You deserve someone who truly cares for you,
+understands you,
+and makes you feel special every single day.
+</p>
 
-<div class="note">
+<p>
 And whenever life feels heavy,
 whenever you feel low or alone…
+</p>
 
+<p class="final-line">
 just text me.
-
+<br><br>
 I’ll always be there for you.
-<div class="heart">♡</div>
+</p>
+
 </div>
 
 </div>
