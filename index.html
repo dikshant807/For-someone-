@@ -6,75 +6,176 @@
 
 <title>For Nikita 🌙</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
 <style>
 
-body{
+*{
     margin:0;
     padding:0;
-    background:black;
-    overflow-x:hidden;
-    font-family: 'Courier New', monospace;
-    color:white;
+    box-sizing:border-box;
 }
 
-/* Moon */
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+    font-family:'Special Elite', cursive;
+    position:relative;
+}
+
+/* STARS */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+    background-size:50px 50px;
+    opacity:0.2;
+    z-index:-2;
+}
+
+/* MOON */
 
 .moon{
     width:180px;
     height:180px;
     background:#f5f3ce;
     border-radius:50%;
-    margin:60px auto;
-    box-shadow:0 0 60px #fff8b0;
+    margin:60px auto 20px;
+    box-shadow:
+    0 0 50px #fff8b0,
+    0 0 120px #fff8b0;
 }
 
-/* Notes */
+/* TITLE */
+
+.title{
+    text-align:center;
+    font-size:60px;
+    margin-bottom:60px;
+    font-family:'Caveat', cursive;
+    color:#fff3c2;
+}
+
+/* NOTES */
 
 .container{
-    width:90%;
-    max-width:700px;
-    margin:auto;
-    padding-bottom:100px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:60px;
+    padding-bottom:120px;
 }
+
+/* PAPER NOTE */
 
 .note{
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.1);
-    backdrop-filter:blur(5px);
-    padding:25px;
-    margin:30px 0;
-    border-radius:20px;
-    line-height:1.8;
-    animation:fadeUp 1s ease;
+    width:85%;
+    max-width:500px;
+    background:#d8c3a5;
+    color:#2d1f14;
+    padding:35px;
+    line-height:2;
+    border-radius:3px;
+    position:relative;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.5);
+
+    transform:rotate(-1deg);
+    animation:float 4s ease-in-out infinite;
 }
 
-h1{
-    text-align:center;
-    font-size:40px;
-    margin-top:-20px;
+/* alternate rotation */
+
+.note:nth-child(even){
+    transform:rotate(1deg);
 }
 
-p{
-    font-size:18px;
+/* tape effect */
+
+.note::before{
+    content:'';
+    position:absolute;
+    width:90px;
+    height:25px;
+    background:rgba(255,255,255,0.25);
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%) rotate(-3deg);
+    backdrop-filter:blur(2px);
 }
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
+/* little pin */
+
+.note::after{
+    content:'';
+    width:15px;
+    height:15px;
+    background:#b88c5a;
+    border-radius:50%;
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    box-shadow:0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* FLOAT */
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
     }
 }
+
+/* HEART */
+
+.heart{
+    text-align:right;
+    margin-top:15px;
+    font-size:24px;
+    color:#8b3a3a;
+}
+
+/* END */
 
 .end{
     text-align:center;
-    padding:80px 20px;
-    font-size:22px;
-    opacity:0.8;
+    font-size:35px;
+    color:#fff3c2;
+    padding-bottom:100px;
+    font-family:'Caveat', cursive;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.title{
+    font-size:48px;
+}
+
+.note{
+    width:90%;
+    padding:25px;
+    font-size:15px;
+    line-height:1.8;
+}
+
 }
 
 </style>
@@ -82,9 +183,13 @@ p{
 
 <body>
 
+<div class="stars"></div>
+
 <div class="moon"></div>
 
-<h1>For Nikita 🌙</h1>
+<div class="title">
+For Nikita 🌙
+</div>
 
 <div class="container">
 
@@ -95,6 +200,7 @@ But in first year, we made eye contact once.
 
 Maybe for you it was just a normal moment,
 but for me, it became one of the most beautiful memories of my life.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
@@ -104,32 +210,41 @@ Because honestly, you looked so stunning… so beautiful.
 
 But as the semesters passed,
 I realized it was more than that.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
 Somewhere in between those days,
 you slowly made a place in my heart.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
 I always wanted to talk to you properly,
+
 but whenever you came in front of me,
 my mind just stopped working.
 
 I forgot every sentence I ever prepared.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
 Vo samne thi par hum palakhe uthaa na sake,
+
 Pyar to bahot krte hai par kabhi bata na sake.
 
 Pass nhi ja skte the kyuki unki tasveer thi ankho me,
+
 Bas yahi sochkar hum unse najre mila na sake.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
 Whenever life felt heavy or messed up,
+
 one message from you was enough to make me feel okay again.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
@@ -138,12 +253,14 @@ I know making a website to express feelings sounds a little weird.
 But I’m a shy person.
 
 And this was probably the only way I could say everything without forgetting my words.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
 I’m not asking for anything from you.
 
 I just wanted you to know what you meant to me.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
@@ -153,6 +270,7 @@ I just want one promise from you:
 Never waste your feelings on someone who doesn’t value your heart.
 
 You deserve someone who truly cares for you.
+<div class="heart">♡</div>
 </div>
 
 <div class="note">
@@ -162,6 +280,7 @@ whenever you feel low or alone…
 just text me.
 
 I’ll always be there for you.
+<div class="heart">♡</div>
 </div>
 
 </div>
